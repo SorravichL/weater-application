@@ -194,4 +194,10 @@ http://localhost:8080/weather?city=Bangkok   # Go
 }
 ```
 
+## Architecture Diagram
+
+Here’s an overview of how the Weather API Wrapper Service works:
+
+![Weather API Wrapper Diagram](./weather-api-diagram.png)
+
 > Tip: You can create Postman Collections to save and reuse your test requests.
