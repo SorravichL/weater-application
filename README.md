@@ -6,8 +6,6 @@ This project is a **Weather API Wrapper Service** built with **two languages**:
 
 Both services connect to the **Visual Crossing Weather API**, and use **Redis** to cache responses and improve performance. You can choose to run either version based on your preferences or use both in separate environments.
 
-GitHub Repository: [https://github.com/SorravichL/weater-application.git](https://github.com/SorravichL/weater-application.git)
-
 ---
 
 ## Features
@@ -25,26 +23,38 @@ GitHub Repository: [https://github.com/SorravichL/weater-application.git](https:
 
 ```
 weater-application/
-├── ts-part/                 # TypeScript (Express) backend
+
+├── ts-part/                  # TypeScript backend (Express)
 │   ├── src/
 │   │   ├── controllers/
+│   │   │   └── weather.controller.ts
 │   │   ├── routes/
+│   │   │   └── weather.route.ts
 │   │   ├── services/
-│   │   └── index.ts
+│   │   │   ├── cache.service.ts
+│   │   │   └── weather.service.ts
+│   │   └── utils/
+│   │       └── env.ts
+│   │
+│   ├── __tests__/            # TypeScript test files
+│   │   └── weather.test.ts
 │   ├── .env
-│   ├── tsconfig.json
-│   └── package.json
+│   ├── app.ts
+│   ├── server.ts
 
-├── go-part/                 # Golang (Gin) backend
+├── go-part/                  # Golang backend (Gin)
 │   ├── controller/
-│   ├── service/
+│   │   └── weather_controller.go
 │   ├── router/
+│   │   └── weather.go
+│   ├── service/
+│   │   ├── cache_service.go
+│   │   └── weather_service.go
 │   ├── utils/
+│   │   └── env.go
 │   ├── tests/
+│   │   └── weather_test.go
 │   ├── .env
-│   ├── main.go
-│   ├── go.mod
-│   └── go.sum
 ```
 
 ---
@@ -199,5 +209,3 @@ http://localhost:8080/weather?city=Bangkok   # Go
 Here’s an overview of how the Weather API Wrapper Service works:
 
 ![Weather API Wrapper Diagram](./diagram.png)
-
-> Tip: You can create Postman Collections to save and reuse your test requests.
