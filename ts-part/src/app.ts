@@ -5,3 +5,5 @@ export const app = express();
 
 app.use(express.json());
 app.use('/weather', weatherRoute);
+
+export default app;
